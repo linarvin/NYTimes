@@ -1,0 +1,25 @@
+@use '../config';
+.features {
+   // background-color: aqua;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+    h2 {
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5rem;
+    }
+    article {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        h3 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+@include config.breakpoint(md){
+
+}

@@ -1,0 +1,133 @@
+@use '../config';
+.showcase {
+    //background-color: pink;
+    position: relative;
+    padding-bottom: rem;
+
+    figure {
+        margin: 0;
+        figcaption{
+            display: none;
+        }
+        
+    }
+
+    
+    &--text--btn{
+        text-align: center;
+        .intro{
+            font-family: config.$fontRoboto;
+            font-weight: 400;
+            display: block;
+            padding-top: 1rem;
+        }
+        .btn--cta {
+            margin-top: 1rem;
+            
+        }
+        
+    }
+
+    .btn--play {
+        margin-top: 1rem;
+    }
+    
+    .btn--play2{
+        display: none;
+    }
+    &--text--btn{
+        h1{
+            font-size: 1.6rem;
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+@include config.breakpoint(md){
+    .showcase{
+        background-image: url('../images/showcase.jpg');
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        
+
+        &--text--btn{
+            color: white;
+            h1{
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .btn--play2{
+            display: block;
+            margin-top: 5rem;
+            //padding: 1rem;
+        }
+
+        figure {
+            display: none;
+        }
+
+        figure.caption {
+            margin: 0;
+            display: block;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+    }
+
+    .showcaseDesktop{
+        position: relative;
+        background-color: black;
+
+        img {
+            
+            opacity: 40%;
+        }
+
+        .showcase--text--btn{
+            
+            position: absolute;
+            
+           
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: white;
+
+            h1 {
+                font-size: 3rem;
+            }
+            .intro {
+                display: none;
+            }
+            .btn--cta {
+                background-color: transparent;
+                border: 1px solid white;
+            }
+        }
+        
+    }
+
+}

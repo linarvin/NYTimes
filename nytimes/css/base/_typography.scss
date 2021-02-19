@@ -1,0 +1,44 @@
+@use '../config';
+h1 {
+    font-family: config.$fontMerr;
+    font-weight: 400;
+    size: 2rem;
+
+    @include config.breakpoint(md){
+        font-size: 3rem;
+    }
+    
+}
+h2 {
+    font-family: config.$fontRoboto;
+    font-weight: 700;
+    font-size: 1.25rem;
+    @include config.breakpoint(md){
+        font-size: 1.5rem;
+    }
+}
+h3 {
+    font-family: config.$fontMerr;
+    font-weight: 700;
+    font-size: 1.25rem;
+    @include config.breakpoint(md){
+        font-size: 2rem;
+    }
+}
+p{
+    font-family: config.$fontMerr;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.4; // line space between each line
+    @include config.breakpoint(sm){
+        font-size: 1.1rem;
+    }
+    @include config.breakpoint(md){
+        font-size: 1.25rem;
+    }
+    @include config.breakpoint(lg){
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+}

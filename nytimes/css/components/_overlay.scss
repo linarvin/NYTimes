@@ -1,0 +1,168 @@
+@use '../config';
+.overlay {
+    background-color:black;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 1000;
+    padding: 1rem;
+
+    // fading in and out 
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+
+    &--menu {
+        top: 0;
+        left: -300px;
+
+        &.show{
+            left: 0;
+        }
+        .menuContent{
+            display: block;
+        }
+        .menuContent2{
+            display: none;
+        }
+    }
+
+    @include config.breakpoint(md){
+        &--menu{
+            .centerItem{
+                .menuContent{
+                   display: none;
+                }
+                .menuContent2{
+                    display: block;
+                    margin-top: 5rem;
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        list-style: none;
+                
+                        
+                        padding-right: 1rem;
+                       // margin: 0;
+                
+                        li {
+                            a {
+                                text-decoration: none;
+                                color: white;
+                                display: block;
+                                margin-bottom: 1rem;
+                                
+                            }
+                        }
+                
+                        ul li {
+                            a{
+                                font-family: config.$fontRoboto;
+                                font-weight: 400;
+                                font-size: 1rem;
+                
+                                text-decoration: none;
+                                color: white;
+                                display: block;
+                                margin-bottom: 1rem;
+                            }
+                        ul {
+                            li {
+                                width: 100%;
+                            }
+                        }
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+
+    &.show {
+        visibility: visible;
+        right: 0;
+        opacity: 1;
+    }
+    .centerItem{
+        
+        padding-left: 2.5rem;
+        font-family: config.$fontRoboto;
+        font-weight: 400;
+        font-size: 1.5rem;
+       // text-align: center;
+        //text-transform: uppercase;
+
+        &--search{
+            margin-top: 25rem;
+            padding-left: 3rem;
+        }
+       
+        img {
+            padding-left: 0;
+            margin-top: 10rem;
+            margin-bottom: 2rem;
+            
+            
+        }
+        
+        ul li {
+            margin-bottom: 2rem;
+        }
+        ul li a {
+            color: white;
+            text-decoration: none;
+
+        }  
+        
+        
+    }
+
+}
+.Overlay--logo {
+    height: 2rem;
+    margin-bottom: 0;
+    padding: 0;
+    
+}
+
+@include config.breakpoint(md){
+    .Overlay--logo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 3.5rem;
+    }
+}
+
+.input--row{
+    display: flex;
+    padding: 2rem;
+    padding-top: 2rem;
+
+    ::placeholder{
+        color: white;
+    }
+
+    form {
+        width: 100%;
+        margin-right: 0.5rem;
+        border: 1px solid white;
+        input{
+            background-color: black;
+            color: white;          
+        }
+    }
+
+    button {
+        height: 3.2rem;
+        width: 3.2rem;
+        background-color: grey;
+        border: 0;
+    }
+}
+

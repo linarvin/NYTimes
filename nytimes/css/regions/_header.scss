@@ -1,0 +1,40 @@
+@use '../config';
+header {
+    background-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+    
+    @include config.breakpoint(sm){
+        padding: 1rem 0;
+    }
+    @include config.breakpoint(md){
+        padding-left: 1rem;
+        padding-right: 1rem;
+        &.headerOverlay{
+            position: absolute; // need to redeclare width
+            top: 0;
+            left: 0;
+            z-index: 999;
+            width: 100%;
+            //see through bc
+            background-color: transparent;
+            margin-top: 1rem;
+            svg {
+                path{
+                    fill: white;
+                }
+            }
+        }
+        
+    }
+    .logo {
+        width: auto;
+        height: 2rem;
+    }
+
+}

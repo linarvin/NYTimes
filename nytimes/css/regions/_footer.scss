@@ -1,0 +1,36 @@
+@use '../config';
+footer {
+    background-color: black;
+    color: white;
+}
+.foot--row {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.foot--logo {
+    height: 2rem;
+    margin-bottom: 0.5rem;
+}
+.socialMedia img{
+    height: 2rem;
+    margin: 1rem;
+}
+@include config.breakpoint(sm){
+    .foot--row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2.5rem;
+        padding-bottom: 1rem;
+        
+    }
+    .foot--logo {
+        height: 1.5rem;
+        margin-bottom: 0;
+    }
+    .socialMedia img {
+        margin: 0rem;
+        height: 1.5rem;
+    }
+}

@@ -1,0 +1,32 @@
+@use '../config';
+.responsive--img {
+    width: 100%;
+    height: auto;
+}
+.alignwide {
+    @include config.breakpoint(sm){
+        margin-left: -2vw;
+        margin-right: -2vw;
+    }
+
+    @include config.breakpoint(md){
+        margin-left: -4vw;
+        margin-right: -4vw;
+    }
+}
+.alignfull {
+    @include config.breakpoint(sm){
+        margin-left: -2vw;
+        margin-right: -2vw;
+    }
+    @include config.breakpoint(md){
+        margin-left: calc(((100vw - 50em)/2) * -1);
+        margin-right: calc(((100vw - 50em)/2) * -1);
+    }
+    @include config.breakpoint(lg){
+        margin-left: calc(((100vw - 55em)/2) * -1);
+        margin-right: calc(((100vw - 55em)/2) * -1);
+    }
+}
+
+    

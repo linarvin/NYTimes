@@ -1,0 +1,87 @@
+@use '../config';
+nav.primary {
+   // background-color: bisque;
+    display: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+    @include config.breakpoint(md){
+        display: block;
+
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        
+        
+        li {
+            a {
+                font-family: config.$fontRoboto;
+                font-weight: 700;
+                font-size: 1.5rem;
+                padding: 1rem;
+                display: block;
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+
+                
+            }
+        }
+    }
+}
+
+nav.secondary {
+    font-family: config.$fontRoboto;
+    font-weight: 400;
+    font-size: 1.25rem;
+    border-top: 1px solid grey;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    display: none;
+
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+
+        
+        padding-right: 1rem;
+        margin: 0;
+
+        li {
+            a {
+                text-decoration: none;
+                color: white;
+                display: block;
+                margin-bottom: 1rem;
+                
+            }
+        }
+
+        ul li {
+            a{
+                font-family: config.$fontRoboto;
+                font-weight: 400;
+                font-size: 1rem;
+
+                text-decoration: none;
+                color: white;
+                display: block;
+                margin-bottom: 1rem;
+            }
+        ul {
+            li {
+                width: 100%;
+            }
+        }
+        }
+    }
+}
+
+@include config.breakpoint(sm){
+    nav.secondary {
+        display: block;
+    }
+}

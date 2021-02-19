@@ -1,0 +1,85 @@
+@use '../config';
+.interactiveMap{
+    background-color: black;
+    color: white;
+    padding-bottom: 6rem;
+    position: relative;
+    // any negative needs to be hidden
+    overflow: hidden;
+    .map--text {
+        text-align: center;
+        margin-top: 1rem;
+       h2{
+           margin-top: 1rem;
+           margin-bottom: 1rem;
+       } 
+        
+        
+    }
+    .panel {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        bottom: -100%;
+        height: 75%;
+        left: 0;
+        z-index: 10;
+        color: black;
+        padding: 1rem;
+        visibility: hidden;
+        transition: all 0.3s;
+        &.show {
+            visibility: visible;
+            bottom:0;
+        }
+
+        h3 {
+            margin-top: 3rem;
+            margin-left: 1rem;
+            
+        }
+
+        p {
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+    }
+    
+    .state {
+        fill: black;
+        stroke: white;
+        stroke-width: 1px;
+        &:hover {
+            fill: gray;
+            // hand cursor 
+            cursor: pointer;
+        }
+        &.active {
+            fill: red;
+        }
+    }
+
+}
+
+@include config.breakpoint(md){
+    .interactiveMap{
+        .panel{
+            // remove pre existing size
+            bottom: auto;
+            left: auto;
+            height: auto;
+            //////////////////////////
+
+            width: 25%;
+            right: -25%;
+            top: 0;
+
+            &.show {
+                right: 0;
+            }
+        }
+        
+
+    }
+}

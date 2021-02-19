@@ -1,0 +1,45 @@
+@use '../config';
+
+// basic container
+.container {
+    //background-color: palegreen;
+    margin: 0px auto; //center on the left and right edge
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /*p{
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        @include config.breakpoint(sm){
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }*/
+
+    // affecting the container for each mode 
+    @include config.breakpoint(sm){
+        width: 96vw;
+        
+
+    }
+    @include config.breakpoint(md){
+        width: 1000px;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    @include config.breakpoint(lg){
+        width: 1200px;
+    }
+
+    &--content {
+        background-color: white;
+
+        @include config.breakpoint(md){
+            width: 50em; // there is about 60ish word on a line <-- line length
+        }
+        @include config.breakpoint(lg){
+            width: 55em; // there is about 60ish word on a line <-- line length
+        }
+
+    }
+}
